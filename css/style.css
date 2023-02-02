@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--white);
+    
+}
+
+/*Background*/
+body {
+    background-image: url(../media/img/background.jpg);
+    background-color: rgba(0, 0, 0, 0.71);
+    background-blend-mode: color;
+    background-attachment: fixed;
+
+    font-size: 14px;
+}
+
+/*Color variables*/
+:root {
+    --black: #000000;
+    --gray: #181818;
+    --orange: #ff9f0a;
+    --blue: #0a84ff;
+    --white: #ffffff;
+}
+
+
+
+/*Navigation bar*/
+
+.nav-container {
+    background-color: #181818;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1890px;
+    margin: 0 auto;
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: auto;
+    background: #181818;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.nav-btn {
+    color: white;
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border: none;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    white-space: nowrap;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 60px;
+    width: 100%;
+    display: table;
+}
+
+#order-nav-btn {
+    color: red;
+}
+
+.nav-btn:hover {
+    color: white;
+    background-color: #ff9f0a;
+    transition: all 0.2s ease-out;
+    border: none;
+}
+
+#logo {
+    width: 200px;
+    margin: 5px;
+}
+
+#nav-logo {
+    margin-left: 20px;
+}
+
+.btn-container.active {
+    background: #181818;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+#menu {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}
+
+.menu-toggle .hamburger-bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    display: block;
+    cursor: pointer;
+}
+
+.menu-toggle:hover {
+    cursor: pointer;
+}
+
+#menu.is-active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#menu.is-active .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menu.is-active .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.content-container {
+    top: 100px;
+    position: absolute;
+    margin: auto;
+}
+
+#test {
+    width: 80%;
+    margin: auto;
+}
+
+
+.slideshow {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    justify-content: center;
+}
+
+.slide-img {
+    display: flex;
+    width: 5000px;
+    height: 300px;
+    position: absolute;
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-4500px);
+    }
+  }
+
+.slide {
+    width: 500px;
+    height: 300px;
+}
+
+.slide-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+#next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+  /* On hover, add a black background color with a little bit see-through */
+.slide-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+  /* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.meny-bilder {
+    width: 500px;
+    height: 300px;
+}
