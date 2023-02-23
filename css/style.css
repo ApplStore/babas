@@ -1,18 +1,31 @@
+/*/
+Font declarations for itc-avant:
+
+Book: (font-weight: 300) default
+Medium: (font-weight: 500)
+Bold: (font-weight: 700)
+/*/
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "itc-avant-garde-gothic-pro", sans-serif;
-    font-weight: 300;
-    font-style: normal;
     color: var(--white);
     
 }
 
+html {
+    font-size: 16px;
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    /*When specifying font-size, use the 'rem' unit; eg. 2rem = 32px*/
+}
+
 /*Background*/
 body {
-    background-image: url(../media/img/background.jpg);
-    background-color: rgba(0, 0, 0, 0.71);
+    /*/background-image: url(../media/img/background.jpg);/*/
+    background-color: rgba(34, 34, 34);
     background-blend-mode: color;
     background-attachment: fixed;
 
@@ -27,6 +40,7 @@ body {
     --blue: #0a84ff;
     --white: #ffffff;
 }
+
 
 
 
@@ -92,7 +106,7 @@ body {
 }
 
 #logo {
-    width: 200px;
+    width: 180px;
     margin: 5px;
 }
 
@@ -141,78 +155,281 @@ body {
 }
 
 
+
 .content-container {
-    top: 100px;
-    position: absolute;
-    margin: auto;
-}
-
-#test {
-    width: 80%;
-    margin: auto;
-}
-
-
-.slideshow {
-    width: 500px;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
     display: grid;
+    position: relative;
+    top: 80px;
+}
+
+#index {
+    height: 800px;
+}
+
+.welcome-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.slide-img {
-    display: flex;
-    width: 5000px;
-    height: 300px;
-    position: absolute;
+.title-overlay-text {
+    font-size: 5vw;
+    font-weight: 700;
+    margin: 10px;
 }
 
-@keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-4500px);
-    }
-  }
-
-.slide {
-    width: 500px;
-    height: 300px;
+.subtitle-overlay-text {
+    font-size: 3vw;
+    font-weight: 500;
+    margin: 10px;
 }
 
-.slide-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
+.overlay-text {
+    font-size: 3vw;
+    margin: 10px;
+}
+
+.main-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 20px;
+}
+
+.about-container {
+    background-color: rgba(58, 54, 54, 0.762);
+    justify-self: center;
+    text-decoration: none;
+    text-align:justify;
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-#next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
 }
 
-  /* On hover, add a black background color with a little bit see-through */
-.slide-btn:hover {
-    background-color: rgba(0,0,0,0.8);
+.about-text {
+    font-family: "Montserrat";
+    width: 50%;
+    text-align: justify;
 }
-  /* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+
+@media (max-width: 1000px) {
+
+    .about-text {
+        width: 95%;
+        text-align: left;
+    }
 }
-.meny-bilder {
-    width: 500px;
+
+
+/* meny.html */
+
+.menu-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: rgba(58, 54, 54, 0.762);
+    width: 90%;
+    max-width: 500px;
+    justify-self: center;
+    text-decoration: none;
+    text-align:justify;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.menu-img {
+    width: 100%;
+    padding: 40px;
+}
+
+.menu-item h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 5vw;
+}
+
+@media (min-width: 550px) {
+
+    .menu-item h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+/* About.html */
+
+.map-container {
+    width: 100%;
     height: 300px;
+    max-width: 600px;
+    justify-self: center;
+    margin: 20px;
+}
+
+
+
+
+/* book.html */
+
+.book-var {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    gap: 20px;
+}
+
+.book {
+    background-color: rgba(58, 54, 54, 0.762);
+    width: 90%;
+    max-width: 500px;
+    justify-self: center;
+    text-decoration: none;
+    text-align:justify;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+.book-btn {
+    background-color: white;
+    color: rgba(58, 54, 54, 0.762);
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background-color: rgba(58, 54, 54, 0.762);
+    color: white;
+}
+
+
+
+
+
+/*order.html*/
+
+
+.order-var {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    gap: 20px;
+    max-width: 1000px;
+}
+
+@media (min-width: 500px) {
+
+    .order-var {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .order-var {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.order-container {
+    background-color: rgba(58, 54, 54, 0.762);
+    width: 90%;
+    max-width: 500px;
+    justify-self: center;
+    text-decoration: none;
+    text-align:justify;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+
+}
+
+.order-container h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.order-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.order-container label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.order-container select {
+    display: block;
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.order-container option {
+    color: #000000;
+}
+
+.order-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.order-container button {
+    background-color: #e64a19;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.order-container button:hover {
+    background-color: #ff6d4a;
 }
